@@ -1,0 +1,32 @@
+{
+  "name": "base-uri",
+  "version": "1.0.1",
+  "description": "Get the base URI of client or server applications",
+  "keywords": [],
+  "homepage": "https://el-tramo.be/base-uri",
+  "license": "MIT",
+  "author": {
+    "name": "Remko Tronçon",
+    "url": "https://el-tramo.be"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remko/base-uri"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^0.21.2",
+    "eslint-config-remko": "^1.0.0"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "./node_modules/.bin/eslint ."
+    }
+  },
+  "dependencies": {
+    "url": "^0.10.3"
+  }
+}
