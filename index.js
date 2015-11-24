@@ -1,3 +1,5 @@
+/* eslint global-require: 0 */
+
 'use strict';
 
 function getBaseURI() {
@@ -14,7 +16,7 @@ function getBaseURI() {
 		return process.env.PASSENGER_BASE_URI || '';
 	}
 	else {
-		console.error('Unable to get base URI of application');
+		console.error('Unable to get base URI of application'); // eslint-disable-line no-console
 	}
 }
 
