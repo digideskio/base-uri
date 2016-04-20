@@ -1,4 +1,4 @@
-/* eslint global-require: 0 */
+/* eslint global-require: 0, no-console: 0 */
 
 'use strict';
 
@@ -8,6 +8,10 @@ function getBaseURI() {
 		var url = require('url');
 		var scriptEls = document.getElementsByTagName('script'); // eslint-disable-line no-undef
 		var lastScript = scriptEls[scriptEls.length-1];
+		var baseURI = lastScript.getAttribute("data-base-uri");
+		if (baseURI) {
+			return baseURI;
+		}
 		var scriptPath = url.parse(lastScript.src).pathname;
 		return scriptPath.substring(0, scriptPath.lastIndexOf('/')); 
 	}
@@ -16,7 +20,8 @@ function getBaseURI() {
 		return process.env.PASSENGER_BASE_URI || '';
 	}
 	else {
-		console.error('Unable to get base URI of application'); // eslint-disable-line no-console
+		console.error('Unable to get base URI of application');
+		return undefined;
 	}
 }
 

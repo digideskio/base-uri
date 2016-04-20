@@ -1,5 +1,5 @@
-extends: ./node_modules/eslint-config-remko/eslintrc
+extends: 
+  - eslint-config-remko
 env:
-  es6: false
-rules:
-  no-var: 0
+  node: true
+  browser: true
